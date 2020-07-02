@@ -13,12 +13,12 @@ interface IPagerNavigator {
     fun onPageScrollStateChanged(state: Int)
 
     /**
-     * 当IPagerNavigator被添加到MagicIndicator时调用
+     * 当IPagerNavigator被添加到IndicatorX时调用
      */
     fun onAttachToMagicIndicator()
 
     /**
-     * 当IPagerNavigator从MagicIndicator上移除时调用
+     * 当IPagerNavigator从IndicatorX上移除时调用
      */
     fun onDetachFromMagicIndicator()
 

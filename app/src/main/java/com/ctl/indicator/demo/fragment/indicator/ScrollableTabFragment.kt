@@ -15,7 +15,7 @@ import com.ctl.indicator.demo.lifecycle.CustomLifecycle
 class ScrollableTabFragment : BaseFragment() {
 
     private lateinit var binding: FragmentScrollableTabBinding
-    private  val safeArgs:ScrollableTabFragmentArgs by navArgs()
+    private val safeArgs: ScrollableTabFragmentArgs by navArgs()
 
     override fun setLayoutView(): View? {
         binding = FragmentScrollableTabBinding.inflate(layoutInflater)
@@ -27,13 +27,17 @@ class ScrollableTabFragment : BaseFragment() {
     }
 
     override fun initData() {
-        binding.txtClick.setText(safeArgs.value)
+        binding.txtClick.text = safeArgs.value
+        binding.toolbar.txtToolbarTitle.text = "ScrollableTab"
     }
 
     override fun initListener() {
 
         binding.txtClick.setOnClickListener {
             findNavController().navigate(R.id.fixedTabFragment)
+        }
+        binding.toolbar.imgToolbarBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 }

@@ -1,12 +1,14 @@
 package com.ctl.indicator.demo.fragment.indicator
 
 import android.view.View
+import androidx.navigation.fragment.findNavController
+import com.ctl.indicator.demo.R
 import com.ctl.indicator.demo.base.BaseFragment
 import com.ctl.indicator.demo.databinding.FragmentFixedTabBinding
 import com.ctl.indicator.demo.lifecycle.CustomLifecycle
 
 
-class fixedTabFragment : BaseFragment() {
+class FixedTabFragment : BaseFragment() {
     private lateinit var binding: FragmentFixedTabBinding
 
     override fun setLayoutView(): View? {
@@ -19,9 +21,16 @@ class fixedTabFragment : BaseFragment() {
     }
 
     override fun initData() {
+        binding.toolbar.txtToolbarTitle.text = "FixedTabFragment"
     }
 
     override fun initListener() {
+        binding.txtClick.setOnClickListener {
+            findNavController().navigate(R.id.fixedTabFragment)
+        }
+        binding.toolbar.imgToolbarBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
 }

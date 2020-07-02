@@ -10,7 +10,7 @@ import com.ctl.indicator.lib.abs.IPagerNavigator
  * created by : chentl
  * Date: 2020/06/30
  */
-class Indicator(context: Context) : FrameLayout(context) {
+class IndicatorX(context: Context) : FrameLayout(context) {
 
     private var mNavigator: IPagerNavigator? = null
 

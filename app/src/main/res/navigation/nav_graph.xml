@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.ctl.indicator.demo.fragment.MainFragment"
-        android:label="MainFragment">
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_scrollableTabFragment"
             app:destination="@id/scrollableTabFragment" />
@@ -16,7 +17,8 @@
     <fragment
         android:id="@+id/scrollableTabFragment"
         android:name="com.ctl.indicator.demo.fragment.indicator.ScrollableTabFragment"
-        android:label="ScrollableTabFragment">
+        android:label="ScrollableTabFragment"
+        tools:layout="@layout/fragment_scrollable_tab">
         <action
             android:id="@+id/action_scrollableTabFragment_to_fixedTabFragment"
             app:destination="@id/fixedTabFragment" />
@@ -27,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/fixedTabFragment"
-        android:name="com.ctl.indicator.demo.fragment.indicator.fixedTabFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.FixedTabFragment"
         android:label="fragment_fixed_tab"
         tools:layout="@layout/fragment_fixed_tab" />
 </navigation>
