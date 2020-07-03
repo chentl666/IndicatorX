@@ -10,20 +10,22 @@ import com.ctl.indicator.lib.IndicatorX
  */
 class ViewPagerHelper {
 
-    fun bind(indicator: IndicatorX, viewPager: ViewPager) {
+    companion object{
+        fun bind(indicator: IndicatorX, viewPager: ViewPager) {
 
-        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrollStateChanged(state: Int) {
-                indicator.onPageScrollStateChanged(state)
-            }
+            viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+                override fun onPageScrollStateChanged(state: Int) {
+                    indicator.onPageScrollStateChanged(state)
+                }
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                indicator.onPageScrolled(position, positionOffset, positionOffsetPixels)
-            }
+                override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                    indicator.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                }
 
-            override fun onPageSelected(position: Int) {
-                indicator.onPageSelected(position)
-            }
-        })
+                override fun onPageSelected(position: Int) {
+                    indicator.onPageSelected(position)
+                }
+            })
+        }
     }
 }

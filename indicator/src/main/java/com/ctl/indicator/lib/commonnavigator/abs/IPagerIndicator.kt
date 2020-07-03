@@ -15,5 +15,5 @@ interface IPagerIndicator {
 
     fun onPageScrollStateChanged(state: Int)
 
-    fun onPositionDataProvide(dataList: List<PositionData?>?)
+    fun onPositionDataProvide(dataList: List<PositionData>?)
 }

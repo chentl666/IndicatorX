@@ -1,6 +1,7 @@
 package com.ctl.indicator.lib
 
 import android.content.Context
+import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import com.ctl.indicator.lib.abs.IPagerNavigator
@@ -10,9 +11,17 @@ import com.ctl.indicator.lib.abs.IPagerNavigator
  * created by : chentl
  * Date: 2020/06/30
  */
-class IndicatorX(context: Context) : FrameLayout(context) {
+class IndicatorX : FrameLayout {
 
     private var mNavigator: IPagerNavigator? = null
+
+    constructor(context: Context) : super(context) {
+
+    }
+
+    constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) {
+
+    }
 
     fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
         mNavigator?.onPageScrolled(position, positionOffset, positionOffsetPixels.toFloat())
@@ -34,13 +43,13 @@ class IndicatorX(context: Context) : FrameLayout(context) {
         if (mNavigator === navigator) {
             return
         }
-        mNavigator?.onDetachFromMagicIndicator()
+        mNavigator?.onDetachFromIndicatorX()
         mNavigator = navigator
         removeAllViews()
         if (mNavigator is View) {
             val lp = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
             addView(mNavigator as View?, lp)
-            mNavigator!!.onAttachToMagicIndicator()
+            mNavigator!!.onAttachToIndicatorX()
         }
     }
 }

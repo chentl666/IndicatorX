@@ -15,9 +15,9 @@ abstract class CommonNavigatorAdapter {
 
     abstract fun getCount(): Int
 
-    abstract fun getTitleView(context: Context?, index: Int): IPagerTitleView?
+    abstract fun getTitleView(context: Context, index: Int): IPagerTitleView?
 
-    abstract fun getIndicator(context: Context?): IPagerIndicator?
+    abstract fun getIndicator(context: Context): IPagerIndicator?
 
     open fun getTitleWeight(context: Context?, index: Int): Float {
         return 1F

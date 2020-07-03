@@ -15,12 +15,12 @@ interface IPagerNavigator {
     /**
      * 当IPagerNavigator被添加到IndicatorX时调用
      */
-    fun onAttachToMagicIndicator()
+    fun onAttachToIndicatorX()
 
     /**
      * 当IPagerNavigator从IndicatorX上移除时调用
      */
-    fun onDetachFromMagicIndicator()
+    fun onDetachFromIndicatorX()
 
     /**
      * ViewPager内容改变时需要先调用此方法，自定义的IPagerNavigator应当遵守此约定

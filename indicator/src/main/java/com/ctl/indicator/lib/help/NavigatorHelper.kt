@@ -2,6 +2,7 @@ package com.ctl.indicator.lib.help
 
 import android.util.SparseArray
 import android.util.SparseBooleanArray
+import androidx.viewpager.widget.ViewPager
 
 /**
  * 方便扩展IPagerNavigator的帮助类，将ViewPager的3个回调方法转换成
@@ -18,7 +19,7 @@ class NavigatorHelper {
     private var mCurrentIndex = 0
     private var mLastIndex = 0
     private var mLastPositionOffsetSum = 0f
-    private var mScrollState = ScrollState.SCROLL_STATE_IDLE
+    private var mScrollState = ViewPager.SCROLL_STATE_IDLE
 
     private var mSkimOver = false
     private var mNavigatorScrollListener: OnNavigatorScrollListener? = null
@@ -29,7 +30,7 @@ class NavigatorHelper {
         if (mLastPositionOffsetSum <= currentPositionOffsetSum) {
             leftToRight = true
         }
-        if (mScrollState != ScrollState.SCROLL_STATE_IDLE) {
+        if (mScrollState != ViewPager.SCROLL_STATE_IDLE) {
             if (currentPositionOffsetSum == mLastPositionOffsetSum) {
                 return
             }
@@ -97,7 +98,7 @@ class NavigatorHelper {
         }
     }
 
-    fun onPageScrollStateChanged(state: ScrollState) {
+    fun onPageScrollStateChanged(state: Int) {
         mScrollState = state
     }
 
@@ -123,19 +124,29 @@ class NavigatorHelper {
         return mCurrentIndex
     }
 
-    fun getScrollState(): ScrollState {
+    fun getScrollState(): Int {
         return mScrollState
     }
 
-    private fun dispatchOnEnter(index: Int, enterPercent: Float, leftToRight: Boolean, force: Boolean) {
-        if (mSkimOver || index == mCurrentIndex || mScrollState == ScrollState.SCROLL_STATE_DRAGGING || force) {
+    private fun dispatchOnEnter(
+        index: Int,
+        enterPercent: Float,
+        leftToRight: Boolean,
+        force: Boolean
+    ) {
+        if (mSkimOver || index == mCurrentIndex || mScrollState == ViewPager.SCROLL_STATE_DRAGGING || force) {
             mNavigatorScrollListener?.onEnter(index, mTotalCount, enterPercent, leftToRight)
             mLeavedPercents.put(index, 1.0f - enterPercent)
         }
     }
 
-    private fun dispatchOnLeave(index: Int, leavePercent: Float, leftToRight: Boolean, force: Boolean) {
-        if (mSkimOver || index == mLastIndex || mScrollState == ScrollState.SCROLL_STATE_DRAGGING || (index == mCurrentIndex - 1 || index == mCurrentIndex + 1) && mLeavedPercents[index, 0.0f] != 1.0f || force) {
+    private fun dispatchOnLeave(
+        index: Int,
+        leavePercent: Float,
+        leftToRight: Boolean,
+        force: Boolean
+    ) {
+        if (mSkimOver || index == mLastIndex || mScrollState == ViewPager.SCROLL_STATE_DRAGGING || (index == mCurrentIndex - 1 || index == mCurrentIndex + 1) && mLeavedPercents[index, 0.0f] != 1.0f || force) {
             mNavigatorScrollListener?.onLeave(index, mTotalCount, leavePercent, leftToRight)
             mLeavedPercents.put(index, leavePercent)
         }
