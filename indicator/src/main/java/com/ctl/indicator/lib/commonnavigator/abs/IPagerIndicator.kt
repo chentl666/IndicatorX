@@ -9,7 +9,7 @@ import com.ctl.indicator.lib.commonnavigator.model.PositionData
  */
 interface IPagerIndicator {
 
-    fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int)
+    fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Float)
 
     fun onPageSelected(position: Int)
 

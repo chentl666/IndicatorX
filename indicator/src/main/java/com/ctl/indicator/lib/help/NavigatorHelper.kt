@@ -24,7 +24,7 @@ class NavigatorHelper {
     private var mSkimOver = false
     private var mNavigatorScrollListener: OnNavigatorScrollListener? = null
 
-    fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+    fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Float) {
         val currentPositionOffsetSum = position + positionOffset
         var leftToRight = false
         if (mLastPositionOffsetSum <= currentPositionOffsetSum) {

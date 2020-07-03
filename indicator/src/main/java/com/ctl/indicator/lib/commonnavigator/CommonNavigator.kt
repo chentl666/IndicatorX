@@ -125,9 +125,7 @@ class CommonNavigator(context: Context) : FrameLayout(context), IPagerNavigator,
         super.onLayout(changed, left, top, right, bottom)
         if (mAdapter != null) {
             preparePositionData()
-            if (mIndicator != null) {
-                mIndicator!!.onPositionDataProvide(mPositionDataList)
-            }
+            mIndicator?.onPositionDataProvide(mPositionDataList)
             if (mReselectWhenLayout && mNavigatorHelper.getScrollState() == ViewPager.SCROLL_STATE_IDLE) {
                 onPageSelected(mNavigatorHelper.getCurrentIndex())
                 onPageScrolled(mNavigatorHelper.getCurrentIndex(), 0f, 0f)
@@ -170,10 +168,8 @@ class CommonNavigator(context: Context) : FrameLayout(context), IPagerNavigator,
 
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Float) {
         if (mAdapter != null) {
-            mNavigatorHelper.onPageScrolled(position, positionOffset, positionOffsetPixels.toInt())
-            if (mIndicator != null) {
-                mIndicator!!.onPageScrolled(position, positionOffset, positionOffsetPixels.toInt())
-            }
+            mNavigatorHelper.onPageScrolled(position, positionOffset, positionOffsetPixels)
+            mIndicator?.onPageScrolled(position, positionOffset, positionOffsetPixels)
 
             // 手指跟随滚动
             if (mScrollView != null && mPositionDataList.size > 0 && position >= 0 && position < mPositionDataList.size) {
@@ -199,18 +195,14 @@ class CommonNavigator(context: Context) : FrameLayout(context), IPagerNavigator,
     override fun onPageSelected(position: Int) {
         if (mAdapter != null) {
             mNavigatorHelper.onPageSelected(position)
-            if (mIndicator != null) {
-                mIndicator!!.onPageSelected(position)
-            }
+            mIndicator?.onPageSelected(position)
         }
     }
 
     override fun onPageScrollStateChanged(state: Int) {
         if (mAdapter != null) {
             mNavigatorHelper.onPageScrollStateChanged(state)
-            if (mIndicator != null) {
-                mIndicator!!.onPageScrollStateChanged(state)
-            }
+            mIndicator?.onPageScrollStateChanged(state)
         }
     }
 

@@ -58,7 +58,7 @@ class LinePagerIndicator(context: Context) : View(context), IPagerIndicator {
         canvas.drawRoundRect(mLineRect, mRoundRadius, mRoundRadius, mPaint!!)
     }
 
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Float) {
         if (mPositionDataList == null || mPositionDataList!!.isEmpty()) {
             return
         }
