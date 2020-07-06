@@ -13,7 +13,7 @@ import com.ctl.indicator.lib.util.UIUtil
  * created by : chentl
  * Date: 2020/07/03
  */
-class SimplePagerTitleView(context: Context) : AppCompatTextView(context), IMeasurablePagerTitleView {
+open class SimplePagerTitleView(context: Context) : AppCompatTextView(context), IMeasurablePagerTitleView {
 
     protected var mSelectedColor = 0
     protected var mNormalColor = 0

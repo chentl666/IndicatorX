@@ -12,7 +12,7 @@ import com.ctl.indicator.lib.commonnavigator.abs.IMeasurablePagerTitleView
  * created by : chentl
  * Date: 2020/07/03
  */
-class CommonPagerTitleView(context: Context) : FrameLayout(context), IMeasurablePagerTitleView {
+open class CommonPagerTitleView(context: Context) : FrameLayout(context), IMeasurablePagerTitleView {
     private var mOnPagerTitleChangeListener: OnPagerTitleChangeListener? = null
     private var mContentPositionDataProvider: ContentPositionDataProvider? = null
 

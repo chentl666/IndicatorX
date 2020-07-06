@@ -42,10 +42,9 @@ class FragmentContainerHelper {
         dispatchPageScrolled(position, positionOffset, 0)
     }
 
-    fun FragmentContainerHelper() {}
-
-    fun FragmentContainerHelper(magicIndicator: IndicatorX) {
-        mIndicators.add(magicIndicator)
+    constructor()
+    constructor(indicator: IndicatorX) {
+        mIndicators.add(indicator)
     }
 
     /**
@@ -55,8 +54,8 @@ class FragmentContainerHelper {
      * @param index
      * @return
      */
-    companion object{
-        fun getImitativePositionData(positionDataList: List<PositionData>, index: Int): PositionData? {
+    companion object {
+        fun getImitativePositionData(positionDataList: List<PositionData>, index: Int): PositionData {
             return if (index >= 0 && index <= positionDataList.size - 1) { // 越界后，返回假的PositionData
                 positionDataList[index]
             } else {

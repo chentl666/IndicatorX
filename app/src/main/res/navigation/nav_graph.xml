@@ -13,15 +13,33 @@
         <action
             android:id="@+id/action_mainFragment_to_scrollableTabFragment"
             app:destination="@id/scrollableTabFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fixedTabFragment"
+            app:destination="@id/fixedTabFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dynamicTabFragment"
+            app:destination="@id/dynamicTabFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_noTabOnlyIndicatorFragment"
+            app:destination="@id/noTabOnlyIndicatorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_badgeTabFragment"
+            app:destination="@id/badgeTabFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loadCustomLayoutFragment"
+            app:destination="@id/loadCustomLayoutFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_circleNavigatorFragment"
+            app:destination="@id/circleNavigatorFragment" />
     </fragment>
     <fragment
         android:id="@+id/scrollableTabFragment"
         android:name="com.ctl.indicator.demo.fragment.indicator.ScrollableTabFragment"
         android:label="ScrollableTabFragment"
         tools:layout="@layout/fragment_scrollable_tab">
-        <action
-            android:id="@+id/action_scrollableTabFragment_to_fixedTabFragment"
-            app:destination="@id/fixedTabFragment" />
         <argument
             android:name="value"
             android:defaultValue="123"
@@ -32,4 +50,53 @@
         android:name="com.ctl.indicator.demo.fragment.indicator.FixedTabFragment"
         android:label="fragment_fixed_tab"
         tools:layout="@layout/fragment_fixed_tab" />
+    <fragment
+        android:id="@+id/dynamicTabFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.DynamicTabFragment"
+        android:label="fragment_dynamic_tab"
+        tools:layout="@layout/fragment_dynamic_tab" >
+        <argument
+            android:name="value"
+            android:defaultValue="dynamic"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/noTabOnlyIndicatorFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.NoTabOnlyIndicatorFragment"
+        android:label="fragment_no_tab_only_indicator"
+        tools:layout="@layout/fragment_no_tab_only_indicator" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="NoTabOnlyIndicator" />
+    </fragment>
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.ContainerFragment"
+        android:label="fragment_container"
+        tools:layout="@layout/fragment_container" >
+        <action
+            android:id="@+id/action_containerFragment_to_containerTestFragment"
+            app:destination="@id/containerTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/containerTestFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.ContainerTestFragment"
+        android:label="fragment_container_test"
+        tools:layout="@layout/fragment_container_test" />
+    <fragment
+        android:id="@+id/badgeTabFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.BadgeTabFragment"
+        android:label="fragment_badge_tab"
+        tools:layout="@layout/fragment_badge_tab" />
+    <fragment
+        android:id="@+id/loadCustomLayoutFragment"
+        android:name="com.ctl.indicator.demo.LoadCustomLayoutFragment"
+        android:label="fragment_load_custom_layout"
+        tools:layout="@layout/fragment_load_custom_layout" />
+    <fragment
+        android:id="@+id/circleNavigatorFragment"
+        android:name="com.ctl.indicator.demo.CircleNavigatorFragment"
+        android:label="fragment_circle_navigator"
+        tools:layout="@layout/fragment_circle_navigator" />
 </navigation>

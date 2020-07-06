@@ -16,15 +16,48 @@
             android:id="@+id/toolbar"
             layout="@layout/view_tool_bar" />
 
-        <TextView
-            android:id="@+id/txt_click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="this is scrollable tab" />
-
         <com.ctl.indicator.lib.IndicatorX
             android:id="@+id/indicator1"
-            android:background="#03BF63"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator3"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator4"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator5"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator6"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator7"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator8"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" />
+        <com.ctl.indicator.lib.IndicatorX
+            android:id="@+id/indicator9"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="10dp" />
