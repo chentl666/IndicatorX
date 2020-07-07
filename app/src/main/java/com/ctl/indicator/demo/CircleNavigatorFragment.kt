@@ -6,6 +6,7 @@ import com.ctl.indicator.demo.adapter.ExamplePagerAdapter
 import com.ctl.indicator.demo.base.BaseFragment
 import com.ctl.indicator.demo.databinding.FragmentCircleNavigatorBinding
 import com.ctl.indicator.lib.circlenavigator.CircleNavigator
+import com.ctl.indicator.lib.circlenavigator.ScaleCircleNavigator
 import com.ctl.indicator.lib.help.ViewPagerHelper
 
 
@@ -73,16 +74,16 @@ class CircleNavigatorFragment : BaseFragment() {
     }
 
     private fun initIndicator3() {
-//        val scaleCircleNavigator = ScaleCircleNavigator(this)
-//        scaleCircleNavigator.setCircleCount(CHANNELS.size)
-//        scaleCircleNavigator.setNormalCircleColor(Color.LTGRAY)
-//        scaleCircleNavigator.setSelectedCircleColor(Color.DKGRAY)
-//        scaleCircleNavigator.setCircleClickListener(object : CircleNavigator.OnCircleClickListener {
-//            override fun onClick(index: Int) {
-//                binding.viewPager.currentItem = index
-//            }
-//        })
-//        binding.indicator3.setNavigator(scaleCircleNavigator)
-//        ViewPagerHelper.bind(binding.indicator3, binding.viewPager)
+        val scaleCircleNavigator = ScaleCircleNavigator(requireContext())
+        scaleCircleNavigator.setCircleCount(CHANNELS.size)
+        scaleCircleNavigator.setNormalCircleColor(Color.LTGRAY)
+        scaleCircleNavigator.setSelectedCircleColor(Color.DKGRAY)
+        scaleCircleNavigator.setCircleClickListener(object : ScaleCircleNavigator.OnCircleClickListener {
+            override fun onClick(index: Int) {
+                binding.viewPager.currentItem = index
+            }
+        })
+        binding.indicator3.setNavigator(scaleCircleNavigator)
+        ViewPagerHelper.bind(binding.indicator3, binding.viewPager)
     }
 }
