@@ -20,3 +20,8 @@ dependencies {
 	implementation 'com.github.chentl666:IndicatorX:1.0.0'
 }
 ```
+
+## 混淆配置
+```sh
+-keep class com.ctl.indicator.lib.** { *; }
+```

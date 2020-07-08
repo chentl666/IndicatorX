@@ -1,10 +1,11 @@
-package com.ctl.indicator.demo
+package com.ctl.indicator.demo.fragment.indicator
 
 import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import com.ctl.indicator.demo.R
 import com.ctl.indicator.demo.adapter.ExamplePagerAdapter
 import com.ctl.indicator.demo.base.BaseFragment
 import com.ctl.indicator.demo.databinding.FragmentLoadCustomLayoutBinding

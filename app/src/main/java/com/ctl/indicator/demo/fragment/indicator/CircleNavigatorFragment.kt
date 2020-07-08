@@ -1,4 +1,4 @@
-package com.ctl.indicator.demo
+package com.ctl.indicator.demo.fragment.indicator
 
 import android.graphics.Color
 import android.view.View

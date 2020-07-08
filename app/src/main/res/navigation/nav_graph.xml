@@ -91,12 +91,12 @@
         tools:layout="@layout/fragment_badge_tab" />
     <fragment
         android:id="@+id/loadCustomLayoutFragment"
-        android:name="com.ctl.indicator.demo.LoadCustomLayoutFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.LoadCustomLayoutFragment"
         android:label="fragment_load_custom_layout"
         tools:layout="@layout/fragment_load_custom_layout" />
     <fragment
         android:id="@+id/circleNavigatorFragment"
-        android:name="com.ctl.indicator.demo.CircleNavigatorFragment"
+        android:name="com.ctl.indicator.demo.fragment.indicator.CircleNavigatorFragment"
         android:label="fragment_circle_navigator"
         tools:layout="@layout/fragment_circle_navigator" />
 </navigation>
