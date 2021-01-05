@@ -30,9 +30,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun scrollableTab(view: View) {
         clickContent.value = "scrollableTab"
-//        view.findNavController().navigate(R.id.scrollableTabFragment)
-        val action = MainFragmentDirections.actionMainFragmentToScrollableTabFragment("scrollableTab")
-        view.findNavController().navigate(action)
+        view.findNavController().navigate(R.id.scrollableTabFragment)
+//        val action = MainFragmentDirections.actionMainFragmentToScrollableTabFragment("scrollableTab")
+//        view.findNavController().navigate(action)
     }
 
     fun fixedTab(view: View) {
@@ -70,5 +70,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun customNavigator(view: View) {
         clickContent.value = "customNavigator"
         view.findNavController().navigate(R.id.circleNavigatorFragment)
+    }
+
+    fun recyclerViewRoom(view: View) {
+        view.findNavController().navigate(R.id.studentFragment)
     }
 }

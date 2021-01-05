@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_mainFragment_to_circleNavigatorFragment"
             app:destination="@id/circleNavigatorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
     </fragment>
     <fragment
         android:id="@+id/scrollableTabFragment"
@@ -99,4 +102,9 @@
         android:name="com.ctl.indicator.demo.fragment.indicator.CircleNavigatorFragment"
         android:label="fragment_circle_navigator"
         tools:layout="@layout/fragment_circle_navigator" />
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.ctl.indicator.demo.fragment.StudentFragment"
+        android:label="fragment_student"
+        tools:layout="@layout/fragment_student" />
 </navigation>
