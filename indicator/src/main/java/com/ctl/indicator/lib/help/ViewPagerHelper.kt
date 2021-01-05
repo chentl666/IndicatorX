@@ -29,7 +29,7 @@ class ViewPagerHelper {
             })
         }
 
-        fun bindViewPager2(indicator: IndicatorX, viewPager2: ViewPager2) {
+        fun bind(indicator: IndicatorX, viewPager2: ViewPager2) {
             viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageScrollStateChanged(state: Int) {
                     super.onPageScrollStateChanged(state)
