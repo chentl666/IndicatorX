@@ -17,7 +17,7 @@ allprojects {
 ```
 dependencies {
 	...
-	implementation 'com.github.chentl666:IndicatorX:1.0.0'
+	implementation 'com.github.chentl666:IndicatorX:1.0.1'
 }
 ```
 
